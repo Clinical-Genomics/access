@@ -56,6 +56,6 @@ class limsconnect(object):
         hit = node.text
     return hit
 
-  def getlist(self, term):
-    r = requests.get(self.uri + , auth=(self.user, self.pwd))
-    uri = node.attrib.get('uri')
+#  def getlist(self, term):
+#    r = requests.get(self.uri + , auth=(self.user, self.pwd))
+#    uri = node.attrib.get('uri')
