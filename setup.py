@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
  
 setup(
-  name='clinical',
+  name='access',
   version='0.0.1',
   long_description=__doc__,
   author='Rikard Erlandsson',
