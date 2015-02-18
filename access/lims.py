@@ -64,7 +64,7 @@ class limsconnect(object):
       print node
       for key in node.attrib:
         print key, node.attrib[key]
-        if (key == attribute):
+        if (node.attrib[key] == attribute):
           hit = node.text
 #          hit = node.attrib[attribute]
     return hit
