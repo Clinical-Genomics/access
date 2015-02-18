@@ -62,7 +62,7 @@ class limsconnect(object):
     hit = "No hit"
     for node in tree:
       for key in node.attrib:
-        if (key == attribute)
+        if (key == attribute):
           hit = node.text
 #          hit = node.attrib[attribute]
     return hit
