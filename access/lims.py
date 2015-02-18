@@ -63,7 +63,7 @@ class limsconnect(object):
     for node in tree:
       print node
       for key in node.attrib:
-        print key, node.attrib[attribute]
+        print key, node.attrib[key]
         if (key == attribute):
           hit = node.text
 #          hit = node.attrib[attribute]
