@@ -55,6 +55,18 @@ class limsconnect(object):
       if node.tag == tag:
         hit = node.text
     return hit
+    
+  def getattribute(self, searchattribute, searchvalue, attribute):
+    r = requests.get(self.uri + searchattribute + '/' + searchvalue, auth=(self.user, self.pwd))
+    tree = ElementTree.fromstring(r.text)
+    hit = "No hit"
+    for node in tree:
+      for key in node.attrib:
+        if (key == attribute)
+          hit = node.text
+#          hit = node.attrib[attribute]
+    return hit
+
 
 #  def getlist(self, term):
 #    r = requests.get(self.uri + , auth=(self.user, self.pwd))
