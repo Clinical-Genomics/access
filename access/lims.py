@@ -59,7 +59,7 @@ class limsconnect(object):
     
   def getattribute(self, searchattribute, searchvalue, attribute):
     r = requests.get(self.uri + searchattribute + '/' + searchvalue, auth=(self.user, self.pwd))
-    tree = ElementTree.fromstring(r.text.decode('utf8'))
+    tree = ElementTree.fromstring(r.text.encode('utf8'))
     hit = "No hit"
     for node in tree:
 #      print node
