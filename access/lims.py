@@ -60,7 +60,7 @@ class limsconnect(object):
   def getattribute(self, searchattribute, searchvalue, attribute):
     r = requests.get(self.uri + searchattribute + '/' + searchvalue, auth=(self.user, self.pwd))
     tree = ElementTree.fromstring(r.text.encode('utf8'))
-    hit = "0000"
+    hit = "9999"
     for node in tree:
 #      print node
       for key in node.attrib:
@@ -68,7 +68,10 @@ class limsconnect(object):
         if (node.attrib[key] == attribute):
           hit = node.text
 #          hit = node.attrib[attribute]
-    return hit
+    if hit == "9999":
+      return None
+    else:
+      return hit
 
 
 #  def getlist(self, term):
