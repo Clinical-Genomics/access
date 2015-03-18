@@ -257,7 +257,7 @@ class dbconnect(object):
     indexkey = self.cursor.fetchone()
     if not indexkey:
       return "Failed to get primary key"
-    query = (""" DELETE FROM """ + table + """ WHERE """ + indexkey['Column_name'] + """ = '""" + tableid + """' """)
+    query = (""" DELETE FROM """ + table + """ WHERE """ + indexkey['Column_name'] + """ = '""" + str(tableid) + """' """)
     try:
       self.cursor.execute(query)
     except mysql.IntegrityError, e: 
