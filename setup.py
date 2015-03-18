@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
  
 setup(
   name='access',
-  version='0.0.14',
+  version='0.0.15',
   long_description=__doc__,
   author='Rikard Erlandsson',
   author_email='rikard.erlandson@scilifelab.se',
