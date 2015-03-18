@@ -269,4 +269,4 @@ class dbconnect(object):
     except mysql.Warning, e:
       exit("MySQL warning")
     self.cnx.commit()
-    return "ID " + str(tableid) + " removed"
+    return 0
