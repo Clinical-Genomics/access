@@ -296,11 +296,11 @@ class dbconnect(object):
       exit("MySQL warning")
     return 0
 
-def starttransaction:
+def starttransaction( self ):
   self.cursor.execute(""" START TRANSACTION  """)
   return 0
 
-def committransaction:
+def committransaction( self ):
   self.cursor.execute(""" COMMIT  """)
   return 0
   
