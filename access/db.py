@@ -270,3 +270,39 @@ class dbconnect(object):
       exit("MySQL warning")
     self.cnx.commit()
     return 0
+
+  def sqldeletenocommit( self, table, tableid ):
+    """ Delets entry from table
+        Args:
+          table (str), tableid (rowid)
+      
+        Returns:
+          string: succes explanation
+    """
+    self.cursor.execute(""" SHOW INDEX FROM """ + table + """  """)
+    indexkey = self.cursor.fetchone()
+    if not indexkey:
+      return "Failed to get primary key"
+    query = (""" DELETE FROM """ + table + """ WHERE """ + indexkey['Column_name'] + """ = '""" + str(tableid) + """' """)
+    try:
+      self.cursor.execute(query)
+    except mysql.IntegrityError, e: 
+      print "Error %d: %s" % (e.args[0],e.args[1])
+      exit("DB error")
+    except mysql.Error, e:
+      print "Error %d: %s" % (e.args[0],e.args[1])
+      exit("Syntax error")
+    except mysql.Warning, e:
+      exit("MySQL warning")
+    return 0
+
+def starttransaction:
+  self.cursor.execute(""" START TRANSACTION  """)
+  return 0
+
+def committransaction:
+  self.cursor.execute(""" COMMIT  """)
+  return 0
+  
+  
+  
