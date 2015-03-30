@@ -94,6 +94,8 @@ class dbconnect(object):
   def generalquery( self, query ):
     try:
       self.cursor.execute(query)
+      respons = self.cursor.fetchall()
+      print str(respons)
     except mysql.IntegrityError, e: 
       print "Integrity Error %d: %s" % (e.args[0],e.args[1])
       exit("DB error")
