@@ -99,6 +99,7 @@ class dbconnect(object):
       exit("DB error")
 # handle a specific error condition
     except mysql.Error, e:
+      print str(mysql.Error), str(e)
       print "Generic Error %d: %s" % (e.args[0],e.args[1])
       exit("Syntax error")
 # handle a generic error condition
